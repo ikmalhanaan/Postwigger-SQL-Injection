@@ -16,7 +16,7 @@ This lab contains a SQL injection vulnerability in the product category filter. 
    ```
 4. Continue adding null values until the error disappears and the response includes additional content containing the null values.
 
-![Lab 3 Solution Summary](../Image%20Asset/Lab-03-%20SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query/Pasted%20image%2020260801021826.png)
+![Lab 3 Solution Summary](Pasted%20image%2020260801021826.png)
 
 ---
 
@@ -38,16 +38,16 @@ Increment the column index in the payload:
 ```
 
 - **Order By 1**:
-![Lab 3 Order By 1](../Image%20Asset/Lab-03-%20SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query/Pasted%20image%2020260801022309.png)
+![Lab 3 Order By 1](Pasted%20image%2020260801022309.png)
 
 - **Order By 2**:
-![Lab 3 Order By 2](../Image%20Asset/Lab-03-%20SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query/Pasted%20image%2020260801022424.png)
+![Lab 3 Order By 2](Pasted%20image%2020260801022424.png)
 
 - **Order By 3**:
-![Lab 3 Order By 3](../Image%20Asset/Lab-03-%20SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query/Pasted%20image%2020260801022454.png)
+![Lab 3 Order By 3](Pasted%20image%2020260801022454.png)
 
 - **Order By 4**:
-![Lab 3 Order By 4 Error](../Image%20Asset/Lab-03-%20SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query/Pasted%20image%2020260801022617.png)
+![Lab 3 Order By 4 Error](Pasted%20image%2020260801022617.png)
 
 > [!NOTE]
 > Receiving an **Error** on `ORDER BY 4` confirms that the query returns **3 columns**.
@@ -58,7 +58,7 @@ Inject 3 NULL values corresponding to the column count:
 /filter?category=Gifts'+UNION+SELECT+NULL,NULL,NULL--
 ```
 
-![Lab 3 Union Select Null Solved](../Image%20Asset/Lab-03-%20SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query/Pasted%20image%2020260801023020.png)
+![Lab 3 Union Select Null Solved](Pasted%20image%2020260801023020.png)
 
 > [!SUCCESS]
 > **Lab Solved**: No error occurred and an extra row with NULL values was returned!

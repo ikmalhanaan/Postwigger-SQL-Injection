@@ -14,7 +14,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 ```text
 .
 ├── README.md
-└── Postwigger Sql Injection/
+└── Postwigger/
     ├── 1. What is SQL injection (SQLi).md
     ├── 2. How to detect SQL injection vulnerabilities.md
     ├── 3. Retrieving hidden data.md
@@ -38,7 +38,12 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
         ├── Lab-04-SQL injection UNION attack, finding a column containing text.md
         ├── Lab-05-SQL injection UNION attack, retrieving data from other tables.md
         ├── Exploiting an API endpoint using documentation.md
-        └── Lab Backup File Source code disclosure via backup files.md
+        └── Information disclosure/
+            ├── Authentication bypass via information disclosure.md
+            ├── Information disclosure in error messages.md
+            ├── Information disclosure in version control history.md
+            ├── Information disclosure on debug page.md
+            └── Source code disclosure via backup files.md
 ```
 
 ---
@@ -47,14 +52,14 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 
 | # | Topic | Description | Link |
 |---|---|---|---|
-| 01 | **What is SQL injection (SQLi)** | Pengenalan dasar kerentanan SQLi & dampaknya. | [Read Note](Postwigger%20Sql%20Injection/1.%20What%20is%20SQL%20injection%20%28SQLi%29.md) |
-| 02 | **How to detect SQL injection vulnerabilities** | Teknik deteksi SQLi secara manual maupun otomatis (Burp Scanner). | [Read Note](Postwigger%20Sql%20Injection/2.%20How%20to%20detect%20SQL%20injection%20vulnerabilities.md) |
-| 03 | **Retrieving hidden data** | Memanipulasi `WHERE` clause untuk mengakses data tersembunyi. | [Read Note](Postwigger%20Sql%20Injection/3.%20Retrieving%20hidden%20data.md) |
-| 04 | **Subverting application logic** | Bypass autentikasi/login tanpa password menggunakan komentar SQL. | [Read Note](Postwigger%20Sql%20Injection/4.%20Subverting%20application%20logic.md) |
-| 05 | **SQL injection UNION attacks** | Prasyarat dan konsep dasar serangan `UNION` SQLi. | [Read Note](Postwigger%20Sql%20Injection/5.%20SQL%20injection%20UNION%20attacks.md) |
-| 06 | **Determining column count** | Mengukur jumlah kolom query dengan `ORDER BY` & `UNION SELECT NULL`. | [Read Note](Postwigger%20Sql%20Injection/6.%20Determining%20the%20number%20of%20columns%20required.md) |
-| 07 | **Finding text columns** | Menentukan kolom query yang kompatibel dengan tipe data String. | [Read Note](Postwigger%20Sql%20Injection/7.%20Finding%20columns%20with%20a%20useful%20data%20type.md) |
-| 08 | **Retrieving interesting data** | Mengekstrak data sensitif (username & password) dari tabel lain. | [Read Note](Postwigger%20Sql%20Injection/8.%20Using%20a%20SQL%20injection%20UNION%20attack%20to%20retrieve%20interesting%20data.md) |
+| 01 | **What is SQL injection (SQLi)** | Pengenalan dasar kerentanan SQLi & dampaknya. | [Read Note](Postwigger/1.%20What%20is%20SQL%20injection%20%28SQLi%29.md) |
+| 02 | **How to detect SQL injection vulnerabilities** | Teknik deteksi SQLi secara manual maupun otomatis (Burp Scanner). | [Read Note](Postwigger/2.%20How%20to%20detect%20SQL%20injection%20vulnerabilities.md) |
+| 03 | **Retrieving hidden data** | Memanipulasi `WHERE` clause untuk mengakses data tersembunyi. | [Read Note](Postwigger/3.%20Retrieving%20hidden%20data.md) |
+| 04 | **Subverting application logic** | Bypass autentikasi/login tanpa password menggunakan komentar SQL. | [Read Note](Postwigger/4.%20Subverting%20application%20logic.md) |
+| 05 | **SQL injection UNION attacks** | Prasyarat dan konsep dasar serangan `UNION` SQLi. | [Read Note](Postwigger/5.%20SQL%20injection%20UNION%20attacks.md) |
+| 06 | **Determining column count** | Mengukur jumlah kolom query dengan `ORDER BY` & `UNION SELECT NULL`. | [Read Note](Postwigger/6.%20Determining%20the%20number%20of%20columns%20required.md) |
+| 07 | **Finding text columns** | Menentukan kolom query yang kompatibel dengan tipe data String. | [Read Note](Postwigger/7.%20Finding%20columns%20with%20a%20useful%20data%20type.md) |
+| 08 | **Retrieving interesting data** | Mengekstrak data sensitif (username & password) dari tabel lain. | [Read Note](Postwigger/8.%20Using%20a%20SQL%20injection%20UNION%20attack%20to%20retrieve%20interesting%20data.md) |
 
 ---
 
@@ -64,11 +69,11 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 
 | Lab # | Title | Description | Writeup Link |
 |---|---|---|---|
-| 🧪 **Lab 01** | SQL injection vulnerability in WHERE clause allowing retrieval of hidden data | Bypass category filter `released = 1` dengan payload `' OR 1=1--`. | [Read Writeup](Postwigger%20Sql%20Injection/Labs/lab-01-SQL%20injection%20vulnerability%20in%20WHERE%20clause%20allowing%20retrieval%20of%20hidden%20data.md) |
-| 🧪 **Lab 02** | SQL injection vulnerability allowing login bypass | Bypass form login administrator dengan payload `administrator'--`. | [Read Writeup](Postwigger%20Sql%20Injection/Labs/Lab-02-SQL%20injection%20vulnerability%20allowing%20login%20bypass.md) |
-| 🧪 **Lab 03** | SQL injection UNION attack, determining the number of columns returned | Menemukan jumlah kolom query menggunakan `ORDER BY` & `UNION SELECT NULL`. | [Read Writeup](Postwigger%20Sql%20Injection/Labs/Lab-03-SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query.md) |
-| 🧪 **Lab 04** | SQL injection UNION attack, finding a column containing text | Identifikasi posisi kolom yang mendukung tipe data Text/String. | [Read Writeup](Postwigger%20Sql%20Injection/Labs/Lab-04-SQL%20injection%20UNION%20attack,%20finding%20a%20column%20containing%20text.md) |
-| 🧪 **Lab 05** | SQL injection UNION attack, retrieving data from other tables | Exfiltrate tabel `users` (username & password) dan login sebagai `administrator`. | [Read Writeup](Postwigger%20Sql%20Injection/Labs/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables.md) |
+| 🧪 **Lab 01** | SQL injection vulnerability in WHERE clause allowing retrieval of hidden data | Bypass category filter `released = 1` dengan payload `' OR 1=1--`. | [Read Writeup](Postwigger/Labs/lab-01-SQL%20injection%20vulnerability%20in%20WHERE%20clause%20allowing%20retrieval%20of%20hidden%20data.md) |
+| 🧪 **Lab 02** | SQL injection vulnerability allowing login bypass | Bypass form login administrator dengan payload `administrator'--`. | [Read Writeup](Postwigger/Labs/Lab-02-SQL%20injection%20vulnerability%20allowing%20login%20bypass.md) |
+| 🧪 **Lab 03** | SQL injection UNION attack, determining the number of columns returned | Menemukan jumlah kolom query menggunakan `ORDER BY` & `UNION SELECT NULL`. | [Read Writeup](Postwigger/Labs/Lab-03-SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query.md) |
+| 🧪 **Lab 04** | SQL injection UNION attack, finding a column containing text | Identifikasi posisi kolom yang mendukung tipe data Text/String. | [Read Writeup](Postwigger/Labs/Lab-04-SQL%20injection%20UNION%20attack,%20finding%20a%20column%20containing%20text.md) |
+| 🧪 **Lab 05** | SQL injection UNION attack, retrieving data from other tables | Exfiltrate tabel `users` (username & password) dan login sebagai `administrator`. | [Read Writeup](Postwigger/Labs/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables.md) |
 
 ---
 
@@ -76,7 +81,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 
 | Lab Title | Description | Writeup Link |
 |---|---|---|
-| 🌐 **Exploiting an API endpoint using documentation** | Menemukan *exposed API documentation* via path traversal `/api` & menghapus user `carlos` via `DELETE` endpoint. | [Read Writeup](Postwigger%20Sql%20Injection/Labs/Exploiting%20an%20API%20endpoint%20using%20documentation.md) |
+| 🌐 **Exploiting an API endpoint using documentation** | Menemukan *exposed API documentation* via path traversal `/api` & menghapus user `carlos` via `DELETE` endpoint. | [Read Writeup](Postwigger/Labs/Exploiting%20an%20API%20endpoint%20using%20documentation.md) |
 
 ---
 
@@ -84,11 +89,16 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 
 | Lab Title | Description | Writeup Link |
 |---|---|---|
-| 🔍 **Source code disclosure via backup files** | Menemukan file cadangan `ProductTemplate.java.bak` di direktori `/backup` (`robots.txt`) & ekstraksi *hard-coded PostgreSQL password*. | [Read Writeup](Postwigger%20Sql%20Injection/Labs/Lab%20Backup%20File%20Source%20code%20disclosure%20via%20backup%20files.md) |
+| 🔍 **Information disclosure in error messages** | Ekstraksi versi framework `Apache Struts 2 2.3.31` melalui *verbose error message / stack trace*. | [Read Writeup](Postwigger/Labs/Information%20disclosure/Information%20disclosure%20in%20error%20messages.md) |
+| 🔍 **Information disclosure on debug page** | Pemindaian `/cgi-bin/` untuk menemukan debug page `phpinfo.php` dan ekstraksi `SECRET_KEY`. | [Read Writeup](Postwigger/Labs/Information%20disclosure/Information%20disclosure%20on%20debug%20page.md) |
+| 🔍 **Source code disclosure via backup files** | Penelusuran `/robots.txt` & direktori `/backup` untuk mengunduh `ProductTemplate.java.bak` dan ekstraksi password PostgreSQL. | [Read Writeup](Postwigger/Labs/Information%20disclosure/Source%20code%20disclosure%20via%20backup%20files.md) |
+| 🔍 **Authentication bypass via information disclosure** | Penggunaan HTTP `TRACE` method untuk membocorkan header `X-Custom-IP-Authorization`, IP spoofing `127.0.0.1`, dan menghapus user `carlos`. | [Read Writeup](Postwigger/Labs/Information%20disclosure/Authentication%20bypass%20via%20information%20disclosure.md) |
+| 🔍 **Information disclosure in version control history** | Ekstraksi repositori `.git` publik (`git-dumper`), analisis `git log` & `git show`, pemulihan password lama administrator, dan hapus `carlos`. | [Read Writeup](Postwigger/Labs/Information%20disclosure/Information%20disclosure%20in%20version%20control%20history.md) |
 
 ---
 
 ## 🛠️ Tools Used
-- **Burp Suite Professional / Community Edition** (Proxy, Intercept, Repeater)
+- **Burp Suite Professional / Community Edition** (Proxy, Intercept, Repeater, Match and Replace)
 - **cURL / Terminal CLI**
-- **Git & GitHub Markdown**
+- **Ffuf / Gobuster** (Directory Fuzzing)
+- **Git / Git-Dumper** (Version Control Analysis & Recovery)
