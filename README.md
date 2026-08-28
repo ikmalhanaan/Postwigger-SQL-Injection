@@ -30,6 +30,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
     │   ├── Lab-03- .../
     │   ├── Lab-04- .../
     │   ├── Lab-05- .../
+    │   ├── Lab-06- .../
     │   └── Source code disclosure/
     └── Labs/
         ├── lab-01-SQL injection vulnerability in WHERE clause allowing retrieval of hidden data.md
@@ -37,6 +38,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
         ├── Lab-03-SQL injection UNION attack, determining the number of columns returned by the query.md
         ├── Lab-04-SQL injection UNION attack, finding a column containing text.md
         ├── Lab-05-SQL injection UNION attack, retrieving data from other tables.md
+        ├── Lab-06-SQL injection attack, querying the database type and version on MySQL and Microsoft.md
         ├── Exploiting an API endpoint using documentation.md
         └── Information disclosure/
             ├── Authentication bypass via information disclosure.md
@@ -74,6 +76,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 | 🧪 **Lab 03** | SQL injection UNION attack, determining the number of columns returned | Menemukan jumlah kolom query menggunakan `ORDER BY` & `UNION SELECT NULL`. | [Read Writeup](Postwigger/Labs/Lab-03-SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query.md) |
 | 🧪 **Lab 04** | SQL injection UNION attack, finding a column containing text | Identifikasi posisi kolom yang mendukung tipe data Text/String. | [Read Writeup](Postwigger/Labs/Lab-04-SQL%20injection%20UNION%20attack,%20finding%20a%20column%20containing%20text.md) |
 | 🧪 **Lab 05** | SQL injection UNION attack, retrieving data from other tables | Exfiltrate tabel `users` (username & password) dan login sebagai `administrator`. | [Read Writeup](Postwigger/Labs/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables.md) |
+| 🧪 **Lab 06** | SQL injection attack, querying the database type and version on MySQL and Microsoft | Ekstraksi versi database (MySQL/Microsoft) menggunakan `@@version` & `UNION SELECT`. | [Read Writeup](Postwigger/Labs/Lab-06-SQL%20injection%20attack,%20querying%20the%20database%20type%20and%20version%20on%20MySQL%20and%20Microsoft.md) |
 
 ---
 
