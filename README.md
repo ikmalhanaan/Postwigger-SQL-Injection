@@ -31,6 +31,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
     │   ├── Lab-04- .../
     │   ├── Lab-05- .../
     │   ├── Lab-06- .../
+    │   ├── Lab-07- .../
     │   └── Source code disclosure/
     └── Labs/
         ├── lab-01-SQL injection vulnerability in WHERE clause allowing retrieval of hidden data.md
@@ -39,6 +40,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
         ├── Lab-04-SQL injection UNION attack, finding a column containing text.md
         ├── Lab-05-SQL injection UNION attack, retrieving data from other tables.md
         ├── Lab-06-SQL injection attack, querying the database type and version on MySQL and Microsoft.md
+        ├── Lab-07-SQL injection attack, listing the database contents on non-Oracle databases.md
         ├── Exploiting an API endpoint using documentation.md
         └── Information disclosure/
             ├── Authentication bypass via information disclosure.md
@@ -77,6 +79,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 | 🧪 **Lab 04** | SQL injection UNION attack, finding a column containing text | Identifikasi posisi kolom yang mendukung tipe data Text/String. | [Read Writeup](Postwigger/Labs/Lab-04-SQL%20injection%20UNION%20attack,%20finding%20a%20column%20containing%20text.md) |
 | 🧪 **Lab 05** | SQL injection UNION attack, retrieving data from other tables | Exfiltrate tabel `users` (username & password) dan login sebagai `administrator`. | [Read Writeup](Postwigger/Labs/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables.md) |
 | 🧪 **Lab 06** | SQL injection attack, querying the database type and version on MySQL and Microsoft | Ekstraksi versi database (MySQL/Microsoft) menggunakan `@@version` & `UNION SELECT`. | [Read Writeup](Postwigger/Labs/Lab-06-SQL%20injection%20attack,%20querying%20the%20database%20type%20and%20version%20on%20MySQL%20and%20Microsoft.md) |
+| 🧪 **Lab 07** | SQL injection attack, listing the database contents on non-Oracle databases | Enumerasi `information_schema` untuk menemukan nama tabel & kolom, lalu ekstrak credentials dan login sebagai `administrator`. | [Read Writeup](Postwigger/Labs/Lab-07-SQL%20injection%20attack,%20listing%20the%20database%20contents%20on%20non-Oracle%20databases.md) |
 
 ---
 
