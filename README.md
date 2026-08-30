@@ -32,6 +32,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
     │   ├── Lab-05- .../
     │   ├── Lab-06- .../
     │   ├── Lab-07- .../
+    │   ├── Lab-08- .../
     │   └── Source code disclosure/
     └── Labs/
         ├── lab-01-SQL injection vulnerability in WHERE clause allowing retrieval of hidden data.md
@@ -41,6 +42,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
         ├── Lab-05-SQL injection UNION attack, retrieving data from other tables.md
         ├── Lab-06-SQL injection attack, querying the database type and version on MySQL and Microsoft.md
         ├── Lab-07-SQL injection attack, listing the database contents on non-Oracle databases.md
+        ├── Lab-08-Visible error-based SQL injection.md
         ├── Exploiting an API endpoint using documentation.md
         └── Information disclosure/
             ├── Authentication bypass via information disclosure.md
@@ -80,6 +82,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 | 🧪 **Lab 05** | SQL injection UNION attack, retrieving data from other tables | Exfiltrate tabel `users` (username & password) dan login sebagai `administrator`. | [Read Writeup](Postwigger/Labs/Lab-05-SQL%20injection%20UNION%20attack,%20retrieving%20data%20from%20other%20tables.md) |
 | 🧪 **Lab 06** | SQL injection attack, querying the database type and version on MySQL and Microsoft | Ekstraksi versi database (MySQL/Microsoft) menggunakan `@@version` & `UNION SELECT`. | [Read Writeup](Postwigger/Labs/Lab-06-SQL%20injection%20attack,%20querying%20the%20database%20type%20and%20version%20on%20MySQL%20and%20Microsoft.md) |
 | 🧪 **Lab 07** | SQL injection attack, listing the database contents on non-Oracle databases | Enumerasi `information_schema` untuk menemukan nama tabel & kolom, lalu ekstrak credentials dan login sebagai `administrator`. | [Read Writeup](Postwigger/Labs/Lab-07-SQL%20injection%20attack,%20listing%20the%20database%20contents%20on%20non-Oracle%20databases.md) |
+| 🧪 **Lab 08** | Visible error-based SQL injection | Memicu type conversion error (`CAST`) pada cookie `TrackingId` untuk mengekstrak password `administrator` dalam 1 request. | [Read Writeup](Postwigger/Labs/Lab-08-Visible%20error-based%20SQL%20injection.md) |
 
 ---
 
