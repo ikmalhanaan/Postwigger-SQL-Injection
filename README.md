@@ -34,6 +34,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
     │   ├── Lab-07- .../
     │   ├── Lab-08- .../
     │   ├── Lab-09- .../
+    │   ├── Lab-10- .../
     │   └── Source code disclosure/
     └── Labs/
         ├── lab-01-SQL injection vulnerability in WHERE clause allowing retrieval of hidden data.md
@@ -45,6 +46,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
         ├── Lab-07-SQL injection attack, listing the database contents on non-Oracle databases.md
         ├── Lab-08-Visible error-based SQL injection.md
         ├── Lab-09-Blind SQL Injection With Time Delays and Information Retrieval.md
+        ├── Lab-10-SQL Injection UNION Attack, retrieving multiple values in a single column.md
         ├── Exploiting an API endpoint using documentation.md
         └── Information disclosure/
             ├── Authentication bypass via information disclosure.md
@@ -86,6 +88,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 | 🧪 **Lab 07** | SQL injection attack, listing the database contents on non-Oracle databases | Enumerasi `information_schema` untuk menemukan nama tabel & kolom, lalu ekstrak credentials dan login sebagai `administrator`. | [Read Writeup](Postwigger/Labs/Lab-07-SQL%20injection%20attack,%20listing%20the%20database%20contents%20on%20non-Oracle%20databases.md) |
 | 🧪 **Lab 08** | Visible error-based SQL injection | Memicu type conversion error (`CAST`) pada cookie `TrackingId` untuk mengekstrak password `administrator` dalam 1 request. | [Read Writeup](Postwigger/Labs/Lab-08-Visible%20error-based%20SQL%20injection.md) |
 | 🧪 **Lab 09** | Blind SQL injection with time delays and information retrieval | Eksploitasi blind SQLi berbasis time delay (`pg_sleep`) + Python script untuk mengekstrak password `administrator` karakter per karakter. | [Read Writeup](Postwigger/Labs/Lab-09-Blind%20SQL%20Injection%20With%20Time%20Delays%20and%20Information%20Retrieval.md) |
+| 🧪 **Lab 10** | SQL injection UNION attack, retrieving multiple values in a single column | Menggabungkan username & password (`username||'~'||password`) ke dalam 1 kolom text yang tersedia menggunakan operator konkat PostgreSQL (`||`). | [Read Writeup](Postwigger/Labs/Lab-10-SQL%20Injection%20UNION%20Attack,%20retrieving%20multiple%20values%20in%20a%20single%20column.md) |
 
 ---
 
