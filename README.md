@@ -35,6 +35,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
     │   ├── Lab-08- .../
     │   ├── Lab-09- .../
     │   ├── Lab-10- .../
+    │   ├── Lab-11- .../
     │   └── Source code disclosure/
     └── Labs/
         ├── lab-01-SQL injection vulnerability in WHERE clause allowing retrieval of hidden data.md
@@ -47,6 +48,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
         ├── Lab-08-Visible error-based SQL injection.md
         ├── Lab-09-Blind SQL Injection With Time Delays and Information Retrieval.md
         ├── Lab-10-SQL Injection UNION Attack, retrieving multiple values in a single column.md
+        ├── Lab-11-Blind SQL Injection With Conditional Response.md
         ├── Exploiting an API endpoint using documentation.md
         └── Information disclosure/
             ├── Authentication bypass via information disclosure.md
@@ -89,6 +91,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 | 🧪 **Lab 08** | Visible error-based SQL injection | Memicu type conversion error (`CAST`) pada cookie `TrackingId` untuk mengekstrak password `administrator` dalam 1 request. | [Read Writeup](Postwigger/Labs/Lab-08-Visible%20error-based%20SQL%20injection.md) |
 | 🧪 **Lab 09** | Blind SQL injection with time delays and information retrieval | Eksploitasi blind SQLi berbasis time delay (`pg_sleep`) + Python script untuk mengekstrak password `administrator` karakter per karakter. | [Read Writeup](Postwigger/Labs/Lab-09-Blind%20SQL%20Injection%20With%20Time%20Delays%20and%20Information%20Retrieval.md) |
 | 🧪 **Lab 10** | SQL injection UNION attack, retrieving multiple values in a single column | Menggabungkan username & password (`username||'~'||password`) ke dalam 1 kolom text yang tersedia menggunakan operator konkat PostgreSQL (`||`). | [Read Writeup](Postwigger/Labs/Lab-10-SQL%20Injection%20UNION%20Attack,%20retrieving%20multiple%20values%20in%20a%20single%20column.md) |
+| 🧪 **Lab 11** | Blind SQL injection with conditional responses | Eksploitasi boolean-based blind SQLi via cookie `TrackingId` untuk mengekstrak password `administrator` berbasis pesan "Welcome back!". | [Read Writeup](Postwigger/Labs/Lab-11-Blind%20SQL%20Injection%20With%20Conditional%20Response.md) |
 
 ---
 
