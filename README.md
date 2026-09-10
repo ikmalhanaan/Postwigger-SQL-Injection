@@ -38,6 +38,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
     │   ├── Lab-11- .../
     │   └── Source code disclosure/
     └── Labs/
+        ├── Alur SQL Injection.md
         ├── lab-01-SQL injection vulnerability in WHERE clause allowing retrieval of hidden data.md
         ├── Lab-02-SQL injection vulnerability allowing login bypass.md
         ├── Lab-03-SQL injection UNION attack, determining the number of columns returned by the query.md
@@ -72,6 +73,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 | 06 | **Determining column count** | Mengukur jumlah kolom query dengan `ORDER BY` & `UNION SELECT NULL`. | [Read Note](Postwigger/6.%20Determining%20the%20number%20of%20columns%20required.md) |
 | 07 | **Finding text columns** | Menentukan kolom query yang kompatibel dengan tipe data String. | [Read Note](Postwigger/7.%20Finding%20columns%20with%20a%20useful%20data%20type.md) |
 | 08 | **Retrieving interesting data** | Mengekstrak data sensitif (username & password) dari tabel lain. | [Read Note](Postwigger/8.%20Using%20a%20SQL%20injection%20UNION%20attack%20to%20retrieve%20interesting%20data.md) |
+| 09 | **SQL Injection Methodology & Workflow** | Panduan alur lengkap tahap demi tahap eksploitasi SQLi di dunia nyata & lab. | [Read Note](Postwigger/Labs/Alur%20SQL%20Injection.md) |
 
 ---
 
