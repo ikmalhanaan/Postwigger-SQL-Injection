@@ -1,7 +1,7 @@
-# 🎯 PortSwigger Web Security Academy - Notes & Writeups
+﻿# 🎯 PortSwigger Web Security Academy - Notes & Writeups
 
 ![Category](https://img.shields.io/badge/Category-Cyber%20Security-blue.svg)
-![Topic](https://img.shields.io/badge/Topics-SQLi%20%7C%20API%20Testing%20%7C%20Info%20Disclosure-orange.svg)
+![Topic](https://img.shields.io/badge/Topics-SQLi%20%7C%20XSS%20%7C%20API%20Testing%20%7C%20Info%20Disclosure-orange.svg)
 ![Platform](https://img.shields.io/badge/Platform-PortSwigger%20Web%20Security%20Academy-red.svg)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
 
@@ -25,6 +25,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
     ├── 8. Using a SQL injection UNION attack to retrieve interesting data.md
     ├── Image Asset/
     │   ├── API Testing/
+    │   ├── Cross-Site Scripting/
     │   ├── Lab-01- .../
     │   ├── Lab-02- .../
     │   ├── Lab-03- .../
@@ -50,6 +51,13 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
         ├── Lab-09-Blind SQL Injection With Time Delays and Information Retrieval.md
         ├── Lab-10-SQL Injection UNION Attack, retrieving multiple values in a single column.md
         ├── Lab-11-Blind SQL Injection With Conditional Response.md
+        ├── Cross-Site Scripting/
+        │   ├── Lab 1 Stored XSS into HTML context with nothing encoded.md
+        │   ├── Lab 2 Reflected XSS into HTML context with nothing encoded.md
+        │   ├── Lab 3 DOM XSS in document.write sink using source location.search.md
+        │   ├── Lab 4 DOM XSS in document.write sink using source location.search inside a select element.md
+        │   ├── Lab 5 DOM XSS in innerHTML sink using source location.search.md
+        │   └── Lab 6 DOM XSS in jQuery anchor href attribute sink using location.search source.md
         ├── Exploiting an API endpoint using documentation.md
         └── Information disclosure/
             ├── Authentication bypass via information disclosure.md
@@ -97,7 +105,20 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 
 ---
 
-### 2. API Testing
+### 2. Cross-Site Scripting (XSS)
+
+| Lab # | Title | Description | Writeup Link |
+|---|---|---|---|
+| ⚡ **Lab 01** | Stored XSS into HTML context with nothing encoded | Injeksi payload `<script>alert(1)</script>` pada kolom komentar blog tanpa sanitasi. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%201%20Stored%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md) |
+| ⚡ **Lab 02** | Reflected XSS into HTML context with nothing encoded | Eksekusi `<script>alert(1)</script>` yang direfleksikan langsung melalui parameter pencarian blog. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%202%20Reflected%20XSS%20into%20HTML%20context%20with%20nothing%20encoded.md) |
+| ⚡ **Lab 03** | DOM XSS in document.write sink using source location.search | Break-out dari atribut `<img src>` menggunakan payload `"><svg onload=alert(1)>` via `document.write`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%203%20DOM%20XSS%20in%20document.write%20sink%20using%20source%20location.search.md) |
+| ⚡ **Lab 04** | DOM XSS in document.write sink inside a select element | Break-out dari elemen `<select>` stock checker menggunakan `"></select><img src=1 onerror=alert(1)>`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%204%20DOM%20XSS%20in%20document.write%20sink%20using%20source%20location.search%20inside%20a%20select%20element.md) |
+| ⚡ **Lab 05** | DOM XSS in innerHTML sink using source location.search | Bypass pembatasan `<script>` pada sink `innerHTML` menggunakan event handler `<img src=1 onerror=alert(1)>`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%205%20DOM%20XSS%20in%20innerHTML%20sink%20using%20source%20location.search.md) |
+| ⚡ **Lab 06** | DOM XSS in jQuery anchor href attribute sink | Injeksi pseudo-protocol `javascript:alert(document.cookie)` pada atribut `href` tombol Back via jQuery `attr()`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%206%20DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20location.search%20source.md) |
+
+---
+
+### 3. API Testing
 
 | Lab Title | Description | Writeup Link |
 |---|---|---|
@@ -105,7 +126,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 
 ---
 
-### 3. Information Disclosure
+### 4. Information Disclosure
 
 | Lab Title | Description | Writeup Link |
 |---|---|---|
