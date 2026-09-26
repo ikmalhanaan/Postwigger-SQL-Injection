@@ -1,4 +1,4 @@
-﻿# Lab 15: Reflected XSS into HTML context with all tags blocked except custom ones
+# Lab 15: Reflected XSS into HTML context with all tags blocked except custom ones
 
 **Goal**: Deliver a reflected XSS payload using a custom HTML tag with an `onfocus` event handler that automatically triggers `alert(document.cookie)`.
 

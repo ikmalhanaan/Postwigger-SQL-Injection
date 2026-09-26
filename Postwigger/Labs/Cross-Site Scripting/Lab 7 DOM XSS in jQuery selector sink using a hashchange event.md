@@ -1,4 +1,4 @@
-﻿# Lab 07: DOM XSS in jQuery selector sink using a hashchange event
+# Lab 07: DOM XSS in jQuery selector sink using a hashchange event
 
 **Goal**: Deliver an exploit payload to the victim that triggers the browser's `print()` function via a DOM-based XSS vulnerability in a jQuery selector sink.
 
