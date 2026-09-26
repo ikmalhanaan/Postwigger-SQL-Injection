@@ -1,4 +1,4 @@
-﻿# Lab 06: DOM XSS in jQuery anchor href attribute sink using location.search source
+# Lab 06: DOM XSS in jQuery anchor href attribute sink using location.search source
 
 **Goal**: Perform a DOM-based cross-site scripting (DOM XSS) attack on the Submit feedback page that makes the "Back" link execute `javascript:alert(document.cookie)`.
 

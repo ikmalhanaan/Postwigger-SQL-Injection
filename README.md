@@ -57,7 +57,16 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
         │   ├── Lab 3 DOM XSS in document.write sink using source location.search.md
         │   ├── Lab 4 DOM XSS in document.write sink using source location.search inside a select element.md
         │   ├── Lab 5 DOM XSS in innerHTML sink using source location.search.md
-        │   └── Lab 6 DOM XSS in jQuery anchor href attribute sink using location.search source.md
+        │   ├── Lab 6 DOM XSS in jQuery anchor href attribute sink using location.search source.md
+        │   ├── Lab 7 DOM XSS in jQuery selector sink using a hashchange event.md
+        │   ├── Lab 8 DOM XSS in AngularJS expression with angle brackets and double quotes HTML-encoded.md
+        │   ├── Lab 9 Reflected DOM XSS.md
+        │   ├── Lab 10 Stored DOM XSS.md
+        │   ├── Lab 11 Reflected XSS into attribute with angle brackets HTML-encoded.md
+        │   ├── Lab 12 Stored XSS into anchor href attribute with double quotes HTML-encoded.md
+        │   ├── Lab 13 Reflected XSS into a JavaScript string with angle brackets HTML encoded.md
+        │   ├── Lab 14 Reflected XSS into HTML context with most tags and attributes blocked.md
+        │   └── Lab 15 Reflected XSS into HTML context with all tags blocked except custom ones.md
         ├── Exploiting an API endpoint using documentation.md
         └── Information disclosure/
             ├── Authentication bypass via information disclosure.md
@@ -115,6 +124,15 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 | ⚡ **Lab 04** | DOM XSS in document.write sink inside a select element | Break-out dari elemen `<select>` stock checker menggunakan `"></select><img src=1 onerror=alert(1)>`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%204%20DOM%20XSS%20in%20document.write%20sink%20using%20source%20location.search%20inside%20a%20select%20element.md) |
 | ⚡ **Lab 05** | DOM XSS in innerHTML sink using source location.search | Bypass pembatasan `<script>` pada sink `innerHTML` menggunakan event handler `<img src=1 onerror=alert(1)>`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%205%20DOM%20XSS%20in%20innerHTML%20sink%20using%20source%20location.search.md) |
 | ⚡ **Lab 06** | DOM XSS in jQuery anchor href attribute sink | Injeksi pseudo-protocol `javascript:alert(document.cookie)` pada atribut `href` tombol Back via jQuery `attr()`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%206%20DOM%20XSS%20in%20jQuery%20anchor%20href%20attribute%20sink%20using%20location.search%20source.md) |
+| ⚡ **Lab 07** | DOM XSS in jQuery selector sink using a hashchange event | Eksploitasi jQuery `$()` selector via `location.hash` dan Exploit Server `<iframe>` untuk memicu `print()`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%207%20DOM%20XSS%20in%20jQuery%20selector%20sink%20using%20a%20hashchange%20event.md) |
+| ⚡ **Lab 08** | DOM XSS in AngularJS expression with angle brackets & quotes encoded | Injeksi ekspresi AngularJS `{{$on.constructor('alert(1)')()}}` untuk bypass filter HTML entity encoding. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%208%20DOM%20XSS%20in%20AngularJS%20expression%20with%20angle%20brackets%20and%20double%20quotes%20HTML-encoded.md) |
+| ⚡ **Lab 09** | Reflected DOM XSS | Escaping JSON string via backslash `\"-alert(1)}//` yang di-evaluate oleh sink `eval()` client-side. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%209%20Reflected%20DOM%20XSS.md) |
+| ⚡ **Lab 10** | Stored DOM XSS | Bypass regex HTML filter dengan malformed tag `<><img src=1 onerror=alert(1)>` yang disimpan & dirender via `innerHTML`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%2010%20Stored%20DOM%20XSS.md) |
+| ⚡ **Lab 11** | Reflected XSS into attribute with angle brackets HTML-encoded | Break-out dari atribut quoted `value="..."` dengan event handler `"onmouseover="alert(1)`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%2011%20Reflected%20XSS%20into%20attribute%20with%20angle%20brackets%20HTML-encoded.md) |
+| ⚡ **Lab 12** | Stored XSS into anchor href attribute with double quotes encoded | Injeksi pseudo-protocol `javascript:alert(1)` pada atribut `href` URL Website komentar. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%2012%20Stored%20XSS%20into%20anchor%20href%20attribute%20with%20double%20quotes%20HTML-encoded.md) |
+| ⚡ **Lab 13** | Reflected XSS into a JavaScript string with angle brackets encoded | Break-out dari inline JavaScript string literal menggunakan ekspresi `'-alert(1)-'`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%2013%20Reflected%20XSS%20into%20a%20JavaScript%20string%20with%20angle%20brackets%20HTML%20encoded.md) |
+| ⚡ **Lab 14** | Reflected XSS into HTML context with most tags/attributes blocked | Bypass WAF via Burp Intruder tag/event brute-forcing (`<body onresize=print()>`) + Exploit Server `<iframe>`. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%2014%20Reflected%20XSS%20into%20HTML%20context%20with%20most%20tags%20and%20attributes%20blocked.md) |
+| ⚡ **Lab 15** | Reflected XSS into HTML context with all tags blocked except custom ones | Bypass WAF dengan custom tag `<xss id=x onfocus=alert(document.cookie) tabindex=1>#x` dan Exploit Server redirect. | [Read Writeup](Postwigger/Labs/Cross-Site%20Scripting/Lab%2015%20Reflected%20XSS%20into%20HTML%20context%20with%20all%20tags%20blocked%20except%20custom%20ones.md) |
 
 ---
 
@@ -139,7 +157,7 @@ Repositori ini berisi catatan teori komprehensif (*bilingual technical notes*) d
 ---
 
 ## 🛠️ Tools Used
-- **Burp Suite Professional / Community Edition** (Proxy, Intercept, Repeater, Match and Replace)
+- **Burp Suite Professional / Community Edition** (Proxy, Intercept, Repeater, Intruder, Match and Replace)
 - **cURL / Terminal CLI**
 - **Ffuf / Gobuster** (Directory Fuzzing)
 - **Git / Git-Dumper** (Version Control Analysis & Recovery)

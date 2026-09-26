@@ -1,4 +1,4 @@
-﻿# Lab 05: DOM XSS in innerHTML sink using source location.search
+# Lab 05: DOM XSS in innerHTML sink using source location.search
 
 **Goal**: Perform a DOM-based cross-site scripting (DOM XSS) attack using an `innerHTML` sink that calls the `alert()` function.
 

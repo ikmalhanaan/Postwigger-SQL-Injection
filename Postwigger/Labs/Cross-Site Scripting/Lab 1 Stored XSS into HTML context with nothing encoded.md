@@ -1,4 +1,4 @@
-﻿# Lab 01: Stored XSS into HTML context with nothing encoded
+# Lab 01: Stored XSS into HTML context with nothing encoded
 
 **Goal**: Submit a comment on a blog post that executes the `alert()` JavaScript function whenever the blog post is viewed by users.
 
